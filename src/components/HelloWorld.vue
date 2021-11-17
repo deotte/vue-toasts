@@ -35,6 +35,15 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  created() {
+    console.log(this.$store.state.toasts.length);
+    this.$store.commit('addToast', {
+      title: 'Hello Vuex!',
+      type: 'success',
+      message: 'It looks like you have successfully set up Vuex.'
+    });
+    console.log(this.$store.state.toasts);
   }
 }
 </script>
