@@ -37,7 +37,7 @@ export default {
     msg: String
   },
   created() {
-    console.log(this.$store.state.toasts.length);
+    console.log(this.$store.state.toasts);
     this.$store.commit('addToast', {
       title: 'Hello Vuex!',
       type: 'success',
