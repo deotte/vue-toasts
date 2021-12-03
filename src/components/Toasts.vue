@@ -22,5 +22,15 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+  .toasts-wrapper {
+    width: 600px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    right: 2rem;
+    bottom: 1rem;
+  }
 </style>

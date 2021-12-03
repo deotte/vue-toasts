@@ -37,13 +37,23 @@ export default {
     msg: String
   },
   created() {
-    console.log(this.$store.state.toasts);
     this.$store.commit('addToast', {
       title: 'Hello Vuex!',
       type: 'success',
       message: 'It looks like you have successfully set up Vuex.'
     });
-    console.log(this.$store.state.toasts);
+
+    this.$store.commit('addToast', {
+      title: 'System Error',
+      type: 'error',
+      message: 'Our API is currently experiencing issues - please try again in a couple minutes.'
+    });
+
+    this.$store.commit('addToast', {
+      title: 'New Mention in Post',
+      type: 'info',
+      message: 'One of your followers mentioned you in a new post. Click here to see it.'
+    });
   }
 }
 </script>
