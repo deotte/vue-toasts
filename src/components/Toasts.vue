@@ -30,7 +30,7 @@ export default {
     flex-direction: column;
     align-items: center;
     position: fixed;
-    right: 2rem;
+    right: 1rem;
     bottom: 1rem;
   }
 </style>

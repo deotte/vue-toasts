@@ -1,11 +1,14 @@
 <template>
   <div class="toast">
-    <div class="header" :class="toast.type">
-      <h3>{{ toast.title }}</h3>
-      <button @click="dismissToast">X</button>
-    </div>
+    <div class="sidebar" :class="toast.type"></div>
     <div class="content">
-      <p>{{ toast.message }}</p>
+      <div class="header">
+        <h3>{{ toast.title }}</h3>
+        <button @click="dismissToast">X</button>
+      </div>
+      <div class="text">
+        <p>{{ toast.message }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -35,7 +38,7 @@ export default {
 :root {
   --cream: #faf8f7;
   --light-grey: #e7e7e7;
-  --black: #000000;
+  --grey: #cccccc;
   --white: #FFFFFF;
   --green: #009900;
   --red: #990000;
@@ -59,33 +62,67 @@ export default {
 }
 
 .toast {
-  width: 600px;
-  min-height: 150px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-}
-
-.toast .header, .toast .content {
-  width: 100%;
+  width: 500px;
+  min-height: 50px;
   display: flex;
   flex-direction: row;
-  padding: .5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
   box-sizing: border-box;
+  background-color: var(--cream);
+  justify-content: center;
+  border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-top-right-radius: .5rem;
+  box-shadow: 0 0 .5rem var(--grey);
+}
+
+.toast p {
+  font-weight: 100;
+}
+
+.toast .sidebar {
+  width: .5rem;
+}
+
+.toast .content, .toast .header, .toast .text {
+  width: 100%;
+  display: flex;
+}
+
+.toast .content {
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-left: 1rem;
+  box-sizing: border-box;
+}
+
+.toast .header, .toast .text {
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: left;
 }
 
 .toast .header {
-  height: 50px;
+  height: 25px;
+  margin-bottom: 1rem;
 }
 
 .toast .header button {
   margin-left: auto;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-size: 1rem;
+}
+
+.toast .header button:hover {
+  background: var(--light-grey);
 }
 
 .toast .content {
   flex-grow: 1;
-  background-color: var(--light-grey);
 }
 </style>
